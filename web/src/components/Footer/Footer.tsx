@@ -1,0 +1,96 @@
+import React from "react";
+import type { FC } from "react";
+import { Facebook, Instagram, YouTube, Twitter } from "@mui/icons-material";
+import { Stack } from "@mui/system";
+import styled from "@emotion/styled";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+  background-color: #111111;
+  justify-content: space-between;
+`;
+
+const SocialContainer = styled.div`
+  margin: 30px 30px 15px 15px;
+  display: flex;
+`;
+
+const SocialIcon = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #111111;
+  background-color: #${(props) => props.color};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+`;
+
+const SubItems = styled.span`
+  font-size: 12px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  color: #7a7a7d;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
+`;
+
+const Items = styled.span`
+  font-size: 13px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+`;
+
+const Footer: FC = () => {
+  return (
+    <Container>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="space-between"
+      >
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          gap={{ xs: 2, md: 5, lg: 10 }}
+        >
+
+          <Stack direction="column" gap={2} sx={{ margin: "30px " }}>
+
+          </Stack>
+        </Stack>
+        <SocialContainer>
+          <SocialIcon color="7a7a7d">
+            <Twitter />
+          </SocialIcon>
+          <SocialIcon color="7a7a7d">
+            <Facebook />
+          </SocialIcon>
+          <SocialIcon color="7a7a7d">
+            <YouTube />
+          </SocialIcon>
+          <SocialIcon color="7a7a7d">
+            <Instagram />
+          </SocialIcon>
+        </SocialContainer>
+      </Stack>
+
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="space-between"
+        sx={{ margin: "10px" }}
+      >
+        <SubItems>© 2023 Redwoodjs, Inc. All Rights Reserved</SubItems>
+        <SubItems>CA Supply Chains Act</SubItems>
+      </Stack>
+    </Container>
+  );
+};
+
+export default Footer
