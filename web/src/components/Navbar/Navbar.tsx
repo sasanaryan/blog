@@ -7,7 +7,16 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import styled from "@emotion/styled";
+import { Link, routes } from '@redwoodjs/router';
 
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: gray;
+  }
+`;
 const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -25,7 +34,10 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Blog
           </Typography>
+          <StyledLink to={routes.newPost()}>
           <Button color="inherit">New Post</Button>
+          </StyledLink>
+
         </Toolbar>
       </AppBar>
     </Box>

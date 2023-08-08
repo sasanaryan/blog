@@ -1,20 +1,21 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import ArticlesCell from 'src/components/ArticlesCell'
+import styled from "@emotion/styled";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+`;
 const HomePage = () => {
   return (
-    <>
-      <MetaTags title="Home" description="Home page" />
-
-      <h1>HomePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/HomePage/HomePage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>home</code>, link to me with `
-        <Link to={routes.home()}>Home</Link>`
-      </p>
-    </>
+    <Container>
+     <ArticlesCell />
+    </Container>
   )
 }
 

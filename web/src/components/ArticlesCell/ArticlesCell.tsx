@@ -1,10 +1,13 @@
 import type { ArticlesQuery } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
-
+import Cart from "src/components/Cart"
 export const QUERY = gql`
   query ArticlesQuery {
-    articles {
+    articles: posts {
       id
+      title
+      body
+      createdAt
     }
   }
 `
@@ -21,7 +24,7 @@ export const Success = ({ articles }: CellSuccessProps<ArticlesQuery>) => {
   return (
     <ul>
       {articles.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
+        return <Cart key={item.id} post={item}/>
       })}
     </ul>
   )

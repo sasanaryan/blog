@@ -1,20 +1,19 @@
-import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import styled from "@emotion/styled";
+import ArticleCell from 'src/components/ArticleCell'
 
-const PostPage = () => {
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+`;
+const PostPage = ({id}) => {
   return (
-    <>
-      <MetaTags title="Post" description="Post page" />
-
-      <h1>PostPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/PostPage/PostPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>post</code>, link to me with `
-        <Link to={routes.post()}>Post</Link>`
-      </p>
-    </>
+    <Container>
+    <ArticleCell id={id} />
+   </Container>
   )
 }
 
