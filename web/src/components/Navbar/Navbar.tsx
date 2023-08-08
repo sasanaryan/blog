@@ -32,7 +32,9 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <StyledLink to={routes.home()}>
             Blog
+          </StyledLink>
           </Typography>
           <StyledLink to={routes.newPost()}>
           <Button color="inherit">New Post</Button>
